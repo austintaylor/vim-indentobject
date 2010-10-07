@@ -8,7 +8,11 @@
 "
 "   It is based on scripts found on vim.wikia.com
 "   (http://vim.wikia.com/wiki/Indent_text_object)
-
+"
+if (exists("g:loaded_indentobject") && g:loaded_indentobject)
+  finish
+endif
+let g:loaded_indentobject = 1
 
 onoremap <silent>ai :<C-u>call IndentTextObject(0)<CR>
 onoremap <silent>ii :<C-u>call IndentTextObject(1)<CR>
