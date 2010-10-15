@@ -20,7 +20,7 @@ vnoremap <silent>ai :<C-u>call IndentTextObject(0)<CR><Esc>gv
 vnoremap <silent>ii :<C-u>call IndentTextObject(1)<CR><Esc>gv
 
 if !exists("g:indentobject_meaningful_indentation")
-  let g:indentobject_meaningful_indentation = ["haml", "sass", "python"]
+  let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml"]
 end
 
 function! IndentTextObject(inner)
