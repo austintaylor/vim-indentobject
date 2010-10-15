@@ -19,8 +19,12 @@ onoremap <silent>ii :<C-u>call IndentTextObject(1)<CR>
 vnoremap <silent>ai :<C-u>call IndentTextObject(0)<CR><Esc>gv
 vnoremap <silent>ii :<C-u>call IndentTextObject(1)<CR><Esc>gv
 
+if !exists("g:indentobject_meaningful_indentation")
+  let g:indentobject_meaningful_indentation = ["haml", "sass", "python"]
+end
+
 function! IndentTextObject(inner)
-  if &filetype == 'haml' || &filetype == 'sass' || &filetype == 'python'
+  if index(g:indentobject_meaningful_indentation, &filetype) >= 0
     let meaningful_indentation = 1
   else
     let meaningful_indentation = 0
